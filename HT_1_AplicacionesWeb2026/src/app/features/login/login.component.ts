@@ -6,11 +6,14 @@ import { Login } from './loginDto';
 import { LoginService } from './login.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, MatButtonModule, MatInputModule],
+  imports: [FormsModule, MatButtonModule, MatInputModule,MatProgressSpinnerModule,CommonModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   
@@ -18,19 +21,26 @@ import { MatInputModule } from '@angular/material/input';
 export class LoginComponent {
   
   private loginService = inject(LoginService);
+  private router = inject(Router);
 
   username: string = '';
   password: string = '';
+  isLoading: boolean = false;
 
   login() {
+    this.isLoading = true;
+    setTimeout(() => {
     if (this.username === 'admin@email.com' && this.password === '1234') {
       console.log("login exitoso");
       window.location.href = '/success.html';
       console.log("login exitoso");
       return;
-    }
+    }else{
 
     console.log("login fallido");
+    this.isLoading = false;}
+    }, 1500);
+   
   }
 
 
