@@ -23,21 +23,33 @@ export class LoginComponent {
   password: string = '';
 
   login() {
-    console.log('Usuario:', this.username);
-    console.log('Password:', this.password);
-
-    if (this.username !== '' && this.password !== '') {
-      const objectRequest: Login = {
-        username: this.username,
-        password: this.password 
-      };
-
-      this.loginService.doLogin(objectRequest).subscribe(entry => {
-        if (entry) {
-          console.log("login exitoso");
-        }
-      });
+    if (this.username === 'admin@email.com' && this.password === '1234') {
+      console.log("login exitoso");
+      window.location.href = '/success.html';
+      console.log("login exitoso");
+      return;
     }
 
+    console.log("login fallido");
   }
+
+
+  //login() {
+    //console.log('Usuario:', this.username);
+    //console.log('Password:', this.password);
+
+    //if (this.username !== '' && this.password !== '') {
+      //const objectRequest: Login = {
+        //username: this.username,
+        //password: this.password 
+      //};
+
+      //this.loginService.doLogin(objectRequest).subscribe(entry => {
+        //if (entry) {
+          //console.log("login exitoso");
+        //}
+      //});
+    //}
+
+  //}
 }
