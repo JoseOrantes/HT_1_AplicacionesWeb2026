@@ -1,0 +1,19 @@
+<div style="display:flex; justify-content:center; align-items:center; height:100vh; background: linear-gradient(to right, #6a11cb, #2575fc);">
+  <mat-card style="padding: 30px; width: 350px;">
+    <h2 style="text-align:center; margin-bottom:20px;">Login</h2>
+    <form (ngSubmit)="login()" style="display:flex; flex-direction:column; gap:20px;">
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="username" name="username" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password" name="password" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Login</button>
+    </form>
+  </mat-card>
+</div>
