@@ -1,11 +1,19 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Login } from 'src/app/interfaces/loginDto';
-import { LoginService } from 'src/app/services/login/login.service';
+import { FormsModule } from '@angular/forms';
+//import { Login } from 'src/app/interfaces/loginDto';
+//import { LoginService } from 'src/app/services/login/login.service';
+import { Login } from './loginDto';
+import { LoginService } from './login.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
+  imports: [FormsModule, MatButtonModule, MatInputModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  
 })
 export class LoginComponent {
   
