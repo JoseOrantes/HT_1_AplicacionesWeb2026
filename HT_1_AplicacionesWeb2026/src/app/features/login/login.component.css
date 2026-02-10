@@ -6,3 +6,19 @@
   height: 100vh;
   background: slateblue;
 }
+
+mat-form-field {
+  width: 100%;
+  max-width: 350px;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  max-width: 350px;
+  margin-top: 15px;
+}

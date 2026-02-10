@@ -1,32 +1,37 @@
 <div class="login-container">
-  <h2>Iniciar Sesión</h2>
+  <h2>Iniciar sesión</h2>
 
   <form (ngSubmit)="login()" #loginForm="ngForm" autocomplete="off">
 
-    <mat-form-field appearance="fill">
-      <mat-label>Usuario</mat-label>
-      <input matInput
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Correo electrónico</mat-label>
+      <input
+        matInput
         type="email"
         name="username"
         [(ngModel)]="username"
         required
         autocomplete="new-email"
-        placeholder="example@email.com"
+        placeholder="Ingrese su correo electrónico"
       />
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="full-width">
       <mat-label>Contraseña</mat-label>
-      <input matInput
+      <input
+        matInput
         type="password"
         name="password"
         [(ngModel)]="password"
         required
         autocomplete="new-password"
-        placeholder="******"
+        placeholder="Ingrese su contraseña"
       />
     </mat-form-field>
-    <br>
-    <button mat-raised-button type="submit">Login</button>
+
+    <button mat-raised-button color="primary" type="submit">
+      Iniciar sesión
+    </button>
+
   </form>
 </div>
