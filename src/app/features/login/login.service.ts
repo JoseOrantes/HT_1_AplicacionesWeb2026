@@ -1,0 +1,16 @@
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { Login } from './loginDto';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoginService {
+
+  constructor() { }
+
+  doLogin (input: Login): Observable<Boolean> {
+    return of(true);
+  }
+
+}
